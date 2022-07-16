@@ -61,17 +61,29 @@ app.get('/getProfile',(req,res,next)=>{
             link = [],
             uri = [],
             image= [],
-            followers = [];
+            followers = [],
+            popularity =[],
+            artistGenres=[];
 
         for(var i in body.items){
+            var genres = [];
             name.push(body.items[i].name);
             link.push(body.items[i].external_urls.spotify);
             uri.push(body.items[i].uri);
             image.push(body.items[i].images[0].url);
             followers.push(body.items[i].followers.total);
+            popularity.push(body.items[i].popularity);
+            
+            for(var j in body.items[i].genres){
+                genres.push(body.items[i].genres[j]);
+                if(j >= 2){
+                    break;
+                }
+            }
+            artistGenres.push(genres);
         }
-
-        res.render('top',{title:'YOUR TOP LISTENS',name: name, link: link, uri: uri, image: image, followers: followers});
+        console.log(artistGenres);
+        res.render('top',{title:'YOUR TOP LISTENS',name: name, link: link, uri: uri, image: image, followers: followers, popularity:popularity,artistGenres:artistGenres});
     })
 });
 
