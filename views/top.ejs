@@ -1,0 +1,44 @@
+<%- include('includes/head.ejs')  %> 
+<%- include('includes/nav.ejs') %> 
+<body>
+    <div class="d-flex pt-4 px-4 pb-0 min-vh-100 justify-content-center"> 
+        <div class="d-flex flex-column">
+            <% for(var i in name){ %>
+                <div class="artists rounded mb-4 p-2 shadow-sm">
+                    <table>
+                        <tr>
+                            <td class="d-flex align-items-center">
+                                <div><%- name[i]%></div>
+                            </td>
+                            <td class="w-100">
+                                <div style="visibility:hidden;">hide</div>
+                            </td>
+                            <td>
+                                <form action="<%- uri[i]%>" target="_blank">
+                                    <input class="btn" style="background-color: #8D68B1; color: white;"type="submit" value="APP " />
+                                </form>
+                            </td>
+                            <td>
+                                <form action="<%- link[i]%>" target="_blank">
+                                    <input class="btn" style="background-color: #8D68B1; color: white;"type="submit" value="BROWSER" />
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="rounded" src="<%- image[i] %> " alt="<%- name[i] %>'s PFP " width="100px" height="100px">
+                            </td>
+                            <td>
+                                
+                            </td>
+                            <td>
+                                <div><%- followers[i] %> </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            <%  }%>
+        </div>
+    </div>
+</body>
+<%- include('includes/footer.ejs')  %> 
