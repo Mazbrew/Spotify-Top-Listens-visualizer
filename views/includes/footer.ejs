@@ -9,6 +9,10 @@
     </footer>
 
     <script>
+        function getAngle(x,y){
+            return ((x/y)*360)
+        }
+
         const artists = document.querySelectorAll(".artists");
         console.log(artists);
         const observer = new IntersectionObserver(entries=>{
@@ -25,5 +29,26 @@
         artists.forEach(artist=>{
             observer.observe(artist);
         });
-    </script>
+
+        var canvas = document.getElementById('scaled');
+        canvas.height = canvas.width;
+        var total=0;
+        var followers=[];
+        var angles= [];
+
+        $(document).ready(function(){
+            $(".followers").each(function(){
+                console.log($(this).text());
+                total += parseFloat($(this).text());
+                followers.push(parseFloat($(this).text()).toFixed(2));
+            });
+            console.log("total: "+total);
+            console.log(followers); 
+
+            for(var follower in followers){
+                angles.push(getAngle(follower,total.toFixed(2)));
+            }
+            console.log(angles);
+        });
+    </script>   
 </html>
