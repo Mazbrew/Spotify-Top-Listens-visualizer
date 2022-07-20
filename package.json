@@ -1,0 +1,19 @@
+{
+  "name": "spotify_tracker",
+  "version": "1.0.0",
+  "description": "Displays the top plays on a users spotify account",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mazbrew/Spotify-Top-Listens-visualizer.git"
+  },
+  "author": "Yeoh Pe-Ter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mazbrew/Spotify-Top-Listens-visualizer/issues"
+  },
+  "homepage": "https://github.com/Mazbrew/Spotify-Top-Listens-visualizer#readme"
+}
