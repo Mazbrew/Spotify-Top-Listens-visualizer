@@ -42,11 +42,12 @@
                 total += parseFloat($(this).text());
                 followers.push(parseFloat($(this).text()).toFixed(2));
             });
-            console.log("total: "+total);
+            console.log(total);
             console.log(followers); 
+            console.log((followers/total.toFixed(2))*360);
 
-            for(var follower in followers){
-                angles.push(getAngle(follower,total.toFixed(2)));
+            for(var i in followers){
+                angles.push(getAngle(followers[i],total));
             }
             console.log(angles);
         });
