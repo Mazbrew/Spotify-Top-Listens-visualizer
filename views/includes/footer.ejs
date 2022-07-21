@@ -9,10 +9,6 @@
     </footer>
 
     <script>
-        function getAngle(x,y){
-            return ((x/y)*360)
-        }
-
         const artists = document.querySelectorAll(".artists");
         console.log(artists);
         const observer = new IntersectionObserver(entries=>{
@@ -29,6 +25,7 @@
         artists.forEach(artist=>{
             observer.observe(artist);
         });
+<<<<<<< HEAD
 
         var canvas = document.getElementById('scaled');
         canvas.height = canvas.width;
@@ -52,4 +49,7 @@
             console.log(angles);
         });
     </script>   
+=======
+    </script>
+>>>>>>> parent of 76ea4fe (added some logic to generate a pie chart)
 </html>
